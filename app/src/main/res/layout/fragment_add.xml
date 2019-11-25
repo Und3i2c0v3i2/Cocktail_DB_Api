@@ -1,0 +1,124 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+<!--        <variable-->
+<!--            name="var"-->
+<!--            type="com.example.template_project.entity.Master" />-->
+
+        <variable
+            name="clickHandler"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+<!--                &lt;!&ndash; two-way data binding &ndash;&gt;-->
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/input_name"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <com.google.android.material.textfield.TextInputEditText-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:hint="Price:"-->
+<!--                        android:inputType="numberDecimal"-->
+<!--                        android:text="@={var.name}" />-->
+
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+
+                <!--
+                if number fields, conver to string
+                create String field for number type
+                annotate getters with @Bindable
+                call notifyPropertyChange in setters
+
+                    @Bindable
+                    public String getPriceString() {
+                        if(price == 0) {
+                            priceString = null;
+                        } else {
+                            priceString = String.valueOf(price);
+                        }
+                        return priceString;
+                    }
+
+                    public void setPriceString(String priceString) {
+                        try {
+                            this.price = Double.parseDouble(priceString);
+                        } catch(NumberFormatException ex){
+                            this.price = 0;//default value
+                        }
+                        notifyPropertyChanged(com.example.aad3.BR.priceString);
+                    }
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Price:"
+                        android:inputType="numberDecimal"
+                        android:text="@={var.priceString}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_update"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Update"
+                        app:cornerRadius="8dp"
+                        android:onClick="@{(v) -> clickHandler.onClick(v)}"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_cancel"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Cancel"
+                        app:cornerRadius="8dp"
+                        android:onClick="@{(v) -> clickHandler.onClick(v)}"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</layout>

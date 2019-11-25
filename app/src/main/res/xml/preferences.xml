@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <PreferenceCategory android:title="@string/prefs_header">
+
+        <ListPreference
+            android:summary="Toast Messages"
+            app:entries="@array/pref_info_entries"
+            app:entryValues="@array/pref_info_values"
+            app:key="@string/list_pref_key"
+            app:title="@string/info_type_title"
+            android:defaultValue="Toast Messages"/>
+
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
