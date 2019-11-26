@@ -83,26 +83,7 @@ public class ListFragment extends Fragment {
         RVAdapterMaster adapter = new RVAdapterMaster(list, listener);
         recyclerView.setAdapter(adapter);
     }
-
-
-    /* ************* TOOLBAR & MENU ************** */
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_home, menu);
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        if (item.getItemId() == R.id.menu_add) {
-            Bundle bundle = new Bundle();
-            bundle.putInt(BUNDLE_KEY, OPEN_ADD);
-            listener.onActionPerformed(bundle);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    
 
 
     /* ******* LIFE CYCLE ******* */

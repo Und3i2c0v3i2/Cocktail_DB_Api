@@ -80,14 +80,12 @@ public class DrinkDetailsFragment extends Fragment implements View.OnClickListen
 
     /* ************* TOOLBAR & MENU ************** */
 
-    //TODO inflate menu resource
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.menu_other, menu);
     }
 
 
-    // TODO toolbar options
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

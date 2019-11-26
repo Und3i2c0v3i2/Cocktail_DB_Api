@@ -19,7 +19,7 @@ import static com.example.cocktaildbapi.view.OnActionPerformedListener.OPEN_CHIL
 public class ConfirmationDialogUtil {
 
 
-    /* for deciding if we should show dialog on rotation change */
+
     public static boolean isConfirmationShowing;
 
     public static AlertDialog showDialog(final Context context, final int action, final Drink drink) {

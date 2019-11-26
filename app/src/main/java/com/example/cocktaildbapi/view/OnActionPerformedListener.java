@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 public interface OnActionPerformedListener {
 
-    //TODO define action keys for fragments communication
     String BUNDLE_KEY = "bundle_key";
     String OBJECT_PARCELABLE = "object_parcelable";
     String OBJECT_ID = "id";
@@ -22,7 +21,6 @@ public interface OnActionPerformedListener {
     int ACTION_UPDATE = 202;
     int ACTION_DELETE = 203;
     int ACTION_CONFIRM = 204;
-    int ACTION_SEARCH = 205;
 
     void onActionPerformed(Bundle bundle);
 }

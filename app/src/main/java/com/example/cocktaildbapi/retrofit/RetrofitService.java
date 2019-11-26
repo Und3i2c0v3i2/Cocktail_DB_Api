@@ -14,7 +14,6 @@ public class RetrofitService {
     }
 
 
-    // getter for each service endpoint
     public static ServiceEndpoints getService(){
         return getRetrofitInstance().create(ServiceEndpoints.class);
     }

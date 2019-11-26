@@ -23,7 +23,6 @@ import static com.example.cocktaildbapi.view.OnActionPerformedListener.OPEN_CHIL
 public class RVAdapterDetails extends RecyclerView.Adapter<RVAdapterDetails.ViewHolder> {
 
 
-    //TODO implement adapter for parent element
     private List<Drink> list;
     private OnActionPerformedListener listener;
 

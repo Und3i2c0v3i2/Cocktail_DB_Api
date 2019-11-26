@@ -28,12 +28,6 @@ public class RetrofitRepositoryImpl {
 
     private RepositoryCallback listener = null;
 
-    /*
-     TODO define retrofit calls
-      and pass data to listener with RES_CODE
-      listener.resultCallback(list, RepositoryCallback.MEALS_BY_NAME_RES_CODE);
-      in MainActivity define RES_CODE behavior
-     */
 
     public void getAll(final Context context) {
 

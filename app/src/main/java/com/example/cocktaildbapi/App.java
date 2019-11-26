@@ -14,7 +14,6 @@ public class App extends Application {
 
 
     public static final String COLUMN_PRIMARY_ID = "primary_key";
-    public static final String COLUMN_FOREIGN_ID = "foreign_key";
 
 
     public static final String API_KEY = BuildConfig.API_KEY;

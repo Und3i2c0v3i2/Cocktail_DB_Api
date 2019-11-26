@@ -20,7 +20,7 @@ import static com.example.cocktaildbapi.retrofit.APIConstants.X_RAPIDAPI_KEY;
 
 public interface ServiceEndpoints {
 
-    // TODO define endpoints and Call type parameters
+
     @GET(ENDPOINT_ALL)
     Call<CategoryResult> getCategories(@Header(X_RAPIDAPI_HOST) String host,
                                        @Header(X_RAPIDAPI_KEY) String key,

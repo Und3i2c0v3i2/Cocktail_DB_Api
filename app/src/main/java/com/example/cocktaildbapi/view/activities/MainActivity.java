@@ -1,18 +1,13 @@
 package com.example.cocktaildbapi.view.activities;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,7 +21,6 @@ import com.example.cocktaildbapi.util.ToastUtil;
 import com.example.cocktaildbapi.view.OnActionPerformedListener;
 import com.example.cocktaildbapi.view.RepositoryCallback;
 import com.example.cocktaildbapi.view.RepositoryImpl;
-import com.example.cocktaildbapi.view.fragments.AddFragment;
 import com.example.cocktaildbapi.view.fragments.DetailsFragment;
 import com.example.cocktaildbapi.view.fragments.DrinkDetailsFragment;
 import com.example.cocktaildbapi.view.fragments.EditFragment;
@@ -81,13 +75,6 @@ public class MainActivity
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        /*
-        TODO if some functionality is in more then one fragment in toolbar
-         we can put it here
-         */
-//        if(item.getItemId() == R.id.menu_search) {
-//            fragmentTransaction(SearchFragment.newInstance(new ArrayList<Meal>()), null);
-//        }
         return toggle.onOptionsItemSelected(item);
     }
 
@@ -202,12 +189,6 @@ public class MainActivity
 
         int bundleKey = bundle.getInt(BUNDLE_KEY, -1);
 
-        /*
-        TODO define actions from fragments
-         define separate case for each action
-         (ex. open add fragment, open edit fragment, save entity, modify entity etc)
-         */
-
         switch (bundleKey) {
 
             case OPEN_PARENT_DETAILS:
@@ -217,12 +198,7 @@ public class MainActivity
 
             case OPEN_CHILD_DETAILS:
                 String id = bundle.getString(OBJECT_ID);
-//                this.drink = bundle.getParcelable(OBJECT_PARCELABLE);
                 repository.getByDrinkId(this, id);
-                break;
-
-            case OPEN_ADD:
-                fragmentTransaction(AddFragment.newInstance(), null);
                 break;
 
             case OPEN_EDIT:
@@ -282,11 +258,7 @@ public class MainActivity
     // result from retrofit call
     @Override
     public void resultCallback(List<?> list, int code) {
-      /*
-       TODO define codes for retrofit result callback
-        define separate case for each retrofit call result
-        (ex. getting all, getting by id, getting by name etc)
-       */
+
         switch (code) {
 
             case ALL_CAT_RES_CODE:

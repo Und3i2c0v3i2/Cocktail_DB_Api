@@ -28,7 +28,7 @@ import static com.example.cocktaildbapi.view.OnActionPerformedListener.BUNDLE_KE
 import static com.example.cocktaildbapi.view.OnActionPerformedListener.OPEN_SAVED;
 
 
-public class DetailsFragment extends Fragment implements View.OnClickListener {
+public class DetailsFragment extends Fragment {
 
 
     private static final String ARG_PARENT = "category";
@@ -66,7 +66,6 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false);
         setHasOptionsMenu(true);
-        binding.setClickHandler(this);
         binding.setVar(category);
 
         drinks = category.getDrinkDetails();
@@ -77,7 +76,6 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
     }
 
 
-    // TODO if needed
     /* ******* CHILD ADAPTER ******* */
     private void setupAdapter(List<Drink> list) {
 
@@ -91,14 +89,12 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
 
     /* ************* TOOLBAR & MENU ************** */
 
-    //TODO inflate menu resource
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.menu_saved, menu);
     }
 
 
-    // TODO toolbar options
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -137,24 +133,5 @@ public class DetailsFragment extends Fragment implements View.OnClickListener {
         listener = null;
     }
 
-    // TODO clicks inside fragment if needed
-    @Override
-    public void onClick(View v) {
 
-        Bundle bundle = new Bundle();
-
-        switch (v.getId()) {
-
-//            case R.id.btn_schedule:
-//                bundle.putInt(BUNDLE_KEY, ACTION_SCHEDULE);
-//                listener.onActionPerformed(bundle);
-//                break;
-//
-//            case R.id.phone_dial:
-//                bundle.putInt(BUNDLE_KEY, ACTION_DIAL);
-//                bundle.putParcelable(OBJECT_PARCELABLE, realty);
-//                listener.onActionPerformed(bundle);
-        }
-
-    }
 }
