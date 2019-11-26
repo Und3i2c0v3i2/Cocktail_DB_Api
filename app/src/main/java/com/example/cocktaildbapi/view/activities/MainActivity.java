@@ -270,25 +270,6 @@ public class MainActivity
                 showConfirmationDialog(this, actionCode, drink);
                 break;
 
-//            case OPEN_IMG:
-//                String url = bundle.getString(IMG_KEY);
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-//                startActivity(intent);
-//                break;
-//
-////            case ACTION_SCHEDULE:
-////                checkPrefs(this, NOTIF_KEY, "Tour Scheduled", "");
-////                break;
-////
-////            case ACTION_DIAL:
-////                parent = bundle.getParcelable(OBJECT_PARCELABLE);
-////                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + parent.getPhoneNo())));
-////                break;
-////
-////            case ACTION_PICK_IMG:
-////                startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI),1000);
-////                break;
-//
         }
     }
 
@@ -330,13 +311,6 @@ public class MainActivity
                 }
                 break;
 
-//            case MEALS_BY_NAME_RES_CODE:
-//                if (list != null && list.size() > 0 && list.get(0) instanceof Meal) {
-//                    this.meals = (List<Meal>) list;
-//                    fragmentTransaction(SearchFragment.newInstance(meals), null);
-//                }
-//                break;
-
         }
     }
 
@@ -351,29 +325,5 @@ public class MainActivity
         repository = null;
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-//        repository.getAll();
-
-    }
-
-
-    /* ************************ GET IMG FROM GALLERY ******************** */
-    // if we have to get img from gallery when adding entity
-    private Uri uri;
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == Activity.RESULT_OK)
-            switch (requestCode){
-                case 1000:
-                    uri = data.getData();
-                    Fragment fr = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
-                    ((AddFragment)fr).getData(uri);
-            }
-    }
 
 }
