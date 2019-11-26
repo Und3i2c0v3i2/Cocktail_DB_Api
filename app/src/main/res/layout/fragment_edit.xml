@@ -7,7 +7,7 @@
 
         <variable
             name="var"
-            type="com.example.aad9exam.entity.Drink"/>
+            type="com.example.cocktaildbapi.entity.Drink"/>
 
         <variable
             name="clickHandler"
